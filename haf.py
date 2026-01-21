@@ -452,5 +452,5 @@ if __name__ == "__main__":
     explicit_prompting = '_explicit' if args.explicit_prompting == 'True' else ''
     use_scores = True if args.use_scores == 'True' else False
 
-    haf = Haf(explicit_prompting=explicit_prompting, scores=use_scores, similarity_model=args.similarity_model)
+    haf = Haf(explicit_prompting=explicit_prompting, use_scores=use_scores, similarity_model=args.similarity_model)
     haf.compute_samplewise()
