@@ -5,6 +5,9 @@ run_scripts/
 slurm_logs/
 logs/
 
+# Kiro IDE
+.kiro/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
