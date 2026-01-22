@@ -1,2 +1,0 @@
-Here dont make any .md files untill i say, also do make any test files until i say
-also if anycode is modularize then delete the old one which is not needed, also make sure to use current requirement.txt and readme file to update anything
