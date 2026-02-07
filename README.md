@@ -36,6 +36,24 @@ View summary statistics for a specific model/dataset combination.
 
 See ``demo_arc_metrics.ipynb`` for an interactive demonstration of how to use the ArC classes and visualize metric outputs.
 
+**4. Start API Server:**
+
+``python run_api.py``
+
+API available at: http://localhost:8000
+
+API documentation at: http://localhost:8000/docs
+
+**5. Start Gradio UI:**
+
+In a separate terminal:
+
+``python run_ui.py``
+
+UI available at: http://localhost:7860
+
+The Gradio interface provides interactive exploration of ArC metrics with visualization and model comparison features.
+
 
 Pipeline:
 =========
@@ -136,6 +154,74 @@ Roadmap:
 ========
 1. We are working on updating the parser files to support more datasets and models. We will soon integrate the results of Microsoft Phi-4 reasoning model.
 2. We will include the results of naive prompting without explicit reasoning instructions.
+
+
+API and UI:
+===========
+
+The project includes a FastAPI backend and Gradio UI for interactive exploration of ArC metrics.
+
+**Installation:**
+
+First, install the required dependencies:
+
+``pip install -r requirements.txt``
+
+**Starting the API Server:**
+
+``python run_api.py``
+
+The API will be available at http://localhost:8000
+
+**Starting the Gradio UI:**
+
+In a separate terminal, run:
+
+``python run_ui.py``
+
+The UI will be available at http://localhost:7860
+
+**API Documentation:**
+
+Once the server is running, visit:
+- Swagger UI: http://localhost:8000/docs
+- ReDoc: http://localhost:8000/redoc
+
+**Available API Endpoints:**
+
+- ``GET /api/v1/models/list`` - List all available models
+- ``GET /api/v1/models/datasets`` - List all available datasets
+- ``GET /api/v1/results/summary/{model_name}/{data_name}`` - Get summary statistics
+- ``GET /api/v1/results/sample/{model_name}/{data_name}/{sample_idx}`` - Get specific sample results
+- ``GET /api/v1/results/compare`` - Compare multiple models
+- ``POST /api/v1/compute/single`` - Compute ArC metrics for a model/dataset
+- ``POST /api/v1/compute/all`` - Compute ArC metrics for all combinations
+
+**Gradio UI Features:**
+
+- **View Results**: Browse ArC metrics for any model/dataset combination
+- **Compare Models**: Side-by-side comparison with radar charts
+- **Run Pipeline**: Execute the full pipeline (generate → parse → compute) from the UI
+- **Configuration**: Manage all configuration files:
+  - Model size configuration (utils/model_size_map.json)
+  - Dataset paths (utils/data_path_map.json)
+  - ArC hyperparameters (utils/arc_hyperparams.py)
+  - Prompt instructions (utils/prompt_instructions.json)
+  - Data path prefixes (utils/data_path_prefixes.py)
+
+**API Pipeline Endpoints:**
+
+- ``POST /api/v1/pipeline/generate`` - Generate LLM outputs for a stage
+- ``POST /api/v1/pipeline/parse`` - Parse LLM outputs for a stage
+- ``POST /api/v1/pipeline/full`` - Run complete pipeline (all stages)
+
+**API Configuration Endpoints:**
+
+- ``GET/PUT /api/v1/config/models`` - Manage model configuration
+- ``GET/PUT /api/v1/config/datasets`` - Manage dataset configuration
+- ``GET/PUT /api/v1/config/hyperparams`` - Manage ArC hyperparameters
+- ``GET/PUT /api/v1/config/prompts`` - Manage prompt instructions
+- ``GET/PUT /api/v1/config/paths`` - Manage data path prefixes
 
 
 Citing:
