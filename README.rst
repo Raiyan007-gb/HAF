@@ -109,9 +109,9 @@ After computing ArC metrics, use `view_results.py <https://github.com/uofthcdsla
 
 This displays aggregated statistics (mean, std, min, max) for all ArC metrics:
 
-- **Relevance Dimension:** SoS (Sufficiency of Stance), DiS-DPP, DiS-Avg (Diversity of Stance)
-- **Internal Reliance Dimension:** UII (Uncertainty in Internal Informativeness), Internal Δ-PE
-- **External Reliance Dimension:** UEI (Uncertainty in External Informativeness), External Δ-PE
+- **Relevance Dimension:** SoS (Sufficiency of Stance), DiS-Avg (Diversity of Stance)
+- **Internal Reliance Dimension:** UII (Uncertainty in Internal Informativeness)
+- **External Reliance Dimension:** UEI (Uncertainty in External Informativeness)
 - **Individual Reliance Dimension:** RS (Reason Sufficiency), RN (Reason Necessity)
 - **Decision Confidence:** Initial, Internal, and External decision confidences
 
